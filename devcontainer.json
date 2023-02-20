@@ -1,0 +1,10 @@
+{
+    "name": "DEV Container",
+    "extensions": ["GitHub.copilot", "editorconfig.editorconfig"],
+    "settings": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "forwardPorts": [3000, 5000],
+    "postCreateCommand": "echo Dev container is ready!"
+  }
