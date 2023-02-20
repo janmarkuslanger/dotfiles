@@ -1,0 +1,5 @@
+{
+    "name": "DEV Container",
+    "extensions": ["GitHub.copilot", "editorconfig.editorconfig"],
+    "postCreateCommand": "echo Dev container is ready!"
+  }
