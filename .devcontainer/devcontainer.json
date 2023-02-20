@@ -1,5 +1,9 @@
 {
     "name": "DEV Container",
-    "extensions": ["GitHub.copilot", "editorconfig.editorconfig"],
-    "postCreateCommand": "echo Dev container is ready!"
-  }
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+    "customizations": {
+        "vscode": {
+            "extensions": ["GitHub.copilot", "editorconfig.editorconfig"]
+        }
+    }
+}
