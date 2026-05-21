@@ -5,7 +5,7 @@ Personal machine setup – idempotent, safe to re-run at any time.
 ## Setup
 
 ```bash
-git clone https://github.com/jan-markuslanger/dotfiles.git ~/dotfiles
+git clone https://github.com/janmarkuslanger/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ./setup.sh
 ```
