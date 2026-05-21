@@ -65,8 +65,8 @@
 
 ### Error Handling
 - No silent failures — no empty catch blocks, no swallowed errors
-- Errors are either propagated or explicitly handled — never both, never neither
-- No `console.log` / `print` as error handling in production code
+- Errors are either propagated or explicitly handled — logging or attaching context before re-throwing is permitted, but never swallow or replace the original error
+- No `console.log` / `print` as the sole error handling in production code
 
 ### Complexity & Structure
 - Functions do exactly one thing
