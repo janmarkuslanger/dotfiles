@@ -2,6 +2,14 @@
 
 ---
 
+## General
+
+### Language
+- Code, filenames, comments, commit messages in English
+- Documentation (README, ADRs, architecture docs, inline docs) always in English — unless explicitly requested otherwise
+
+---
+
 ## Engineering
 
 ### Architect-First
@@ -54,10 +62,6 @@
 ---
 
 ## Code
-
-### Language
-- Code, filenames, comments, commit messages in English
-- Documentation (README, ADRs, architecture docs, inline docs) always in English — unless explicitly requested otherwise
 
 ### Error Handling
 - No silent failures — no empty catch blocks, no swallowed errors
