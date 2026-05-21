@@ -14,9 +14,10 @@
 - At decision points: name options + trade-offs, then ask
 - Applies to: patterns, abstractions, structures, dependencies
 
-### 3. Patterns Require Confirmation
-- Never apply a pattern (Repository, Factory, Strategy, etc.) without explicit approval
-- Name the pattern, briefly justify it, wait for confirmation
+### 3. Abstractions Require Confirmation
+- Never introduce an abstraction without explicit approval
+- Name it, briefly justify why it's needed, wait for confirmation
+- Applies to: design patterns, wrapper layers, shared utilities, interfaces, base classes
 
 ### 4. No Assumptions
 - Always ask when something is unclear – never bridge gaps with assumptions
