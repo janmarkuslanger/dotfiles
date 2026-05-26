@@ -41,9 +41,25 @@ RUN_HOMEBREW=false
 RUN_APPS=false
 RUN_COPY=false
 
-confirm "$(green "1.") Homebrew + brew bundle (packages & casks)?" "y" && RUN_HOMEBREW=true || true
-confirm "$(green "2.") Global apps via npm (Claude Code, etc.)?"   "y" && RUN_APPS=true    || true
-confirm "$(green "3.") Copy dotfiles to \$HOME?"                   "y" && RUN_COPY=true    || true
+echo "$(bold "Step 1 – Homebrew + packages")"
+echo "$(dim "  Installs Homebrew (if missing) and the following packages via Brewfile:")"
+echo "$(dim "  CLI tools : git, curl, wget, jq, gh, fzf, ripgrep, bat, eza, zoxide")"
+echo "$(dim "  Runtimes  : node, python")"
+echo "$(dim "  GUI apps  : Ghostty, Visual Studio Code")"
+confirm "  Install / update?" "y" && RUN_HOMEBREW=true || true
+
+echo ""
+echo "$(bold "Step 2 – Global npm apps")"
+echo "$(dim "  Installs the following package globally via npm:")"
+echo "$(dim "  @anthropic-ai/claude-code  (claude CLI)")"
+confirm "  Install / update?" "y" && RUN_APPS=true || true
+
+echo ""
+echo "$(bold "Step 3 – Copy dotfiles to \$HOME")"
+echo "$(dim "  Copies config files from the following packages into your home directory:")"
+echo "$(dim "  zsh    → ~/.zshrc, ~/.zprofile, etc.")"
+echo "$(dim "  claude → ~/.claude/ settings & templates")"
+confirm "  Copy files?" "y" && RUN_COPY=true || true
 
 # ── Execute selected steps ────────────────────────────────────────────────────
 
