@@ -12,6 +12,7 @@
 - Collect open questions and ask them in one message, not one at a time
 
 ## Architecture
+- When working on technical decisions, do not give much weight on the development costs
 - Impact is measured by reach, not diff size: a one-line change to a shared interface is a change to every implementer and call site. A design sketch (3–5 sentences: what is touched, where the change lives and why there, what was rejected) is required when a change (a) touches a contract others depend on — interface, public signature, shared type, schema, wire format, base class — (b) adds new files or new module interactions, or (c) grows past ~50 lines
 - Before editing a contract, enumerate its consumers first and state the blast radius (implementers, call sites); update all of them in the same change, or flag explicitly why not
 - Dependencies point in one direction: core/domain logic never imports infrastructure (HTTP, DB, UI, framework glue); no circular imports
