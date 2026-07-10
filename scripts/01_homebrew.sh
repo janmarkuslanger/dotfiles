@@ -21,6 +21,6 @@ else
 fi
 
 log "Running brew bundle..."
-brew bundle --file="$DOTFILES_DIR/Brewfile" --no-lock
+brew bundle --file="$DOTFILES_DIR/Brewfile"
 
 log "Done."

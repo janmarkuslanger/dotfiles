@@ -65,5 +65,5 @@ When a file already exists at the target location and differs from the source, t
 Edit `Brewfile`, then:
 
 ```bash
-brew bundle --file=Brewfile --no-lock
+brew bundle --file=Brewfile
 ```
