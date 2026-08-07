@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal machine setup – idempotent, safe to re-run at any time.
+Personal machine setup – non-interactive, idempotent, safe to re-run at any time.
 
 ## Setup
 
@@ -10,60 +10,30 @@ cd ~/dotfiles
 ./setup.sh
 ```
 
-The script prompts interactively which steps to run:
+`setup.sh` does everything in one pass:
 
-| Step | What it does |
-|------|--------------|
-| **1. Homebrew** | Installs Homebrew (if missing) + all packages from `Brewfile` |
-| **2. Apps** | Installs global npm tools (Claude Code) |
-| **3. Copy** | Copies dotfiles into `$HOME`, prompts on conflict |
+1. Installs Homebrew (if missing) and all packages from `Brewfile`
+2. Installs/updates global npm tools (Claude Code)
+3. Copies dotfile packages into `$HOME`
+
+If a target file already exists and differs, it is backed up as
+`<file>.bak.<timestamp>` before being overwritten.
 
 ## Structure
 
-```
-dotfiles/
-├── setup.sh          # Entry point
-├── Brewfile          # All brew/cask packages
-├── scripts/
-│   ├── 01_homebrew.sh
-│   ├── 02_apps.sh
-│   └── 03_copy.sh
-├── claude/
-│   └── .claude/
-│       └── CLAUDE.md # Global Claude Code configuration
-└── zsh/
-    └── .zshrc        # Zsh configuration
-```
-
-## Packages
+Every top-level directory is a package mirroring paths relative to `$HOME`:
 
 | Package | Target | Contents |
 |---------|--------|----------|
 | `claude` | `~/.claude/CLAUDE.md` | Global Claude Code behavior |
 | `zsh` | `~/.zshrc` | Aliases, PATH, fzf, zoxide, history |
 
-## Conflict handling
-
-When a file already exists at the target location and differs from the source, the script asks:
-
-```
-[copy] ~/.zshrc already exists.
-       [o] overwrite  [b] backup + overwrite  [s] skip (default) :
-```
-
 ## Adding a new dotfile package
 
-1. Create a directory mirroring the target path relative to `$HOME`:
-   ```
-   git/.gitconfig
-   ```
-2. Add the package name to `PACKAGES` in `scripts/03_copy.sh`
-3. Re-run `./setup.sh` (step 3 only)
+Create a directory mirroring the target path relative to `$HOME`, e.g.
+`git/.gitconfig`, then re-run `./setup.sh`. Packages are discovered
+automatically – no registration needed.
 
 ## Adding a new brew package
 
-Edit `Brewfile`, then:
-
-```bash
-brew bundle --file=Brewfile
-```
+Edit `Brewfile`, then re-run `./setup.sh` (or `brew bundle --file=Brewfile`).
