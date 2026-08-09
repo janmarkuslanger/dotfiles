@@ -3,9 +3,6 @@
 - State conclusions plainly. When genuinely uncertain, say so — and verify against docs or source instead of guessing
 - Answer what was asked. Flag adjacent findings (a bug, structural impact) in a sentence instead of expanding on them unprompted
 
-## Language
-- Everything in the repo — code, comments, commit messages, docs — is written in English unless explicitly requested otherwise
-
 ## Decisions
 - Classify decisions by reversibility: one-way doors (DB schemas, public APIs, wire/persistence formats, framework choices) are never decided silently — name the options and trade-offs, then ask
 - Two-way doors: decide, and state the decision explicitly so it stays visible and easy to reverse
@@ -42,6 +39,7 @@
 - One concern per PR. The description covers what changed, why, and how to verify; breaking changes and migration steps are called out explicitly
 
 ## Code
+- Everything in the repo — code, comments, commit messages, docs — is written in English unless explicitly requested otherwise
 - Never swallow errors — propagate or handle them explicitly, with enough context to debug
 - Match the project's existing type strictness; never silence a type error with `any` or an unchecked cast
 - A file growing past ~300 lines is a signal to split it before adding more
