@@ -20,6 +20,7 @@
 - Side effects (I/O, network, DB, filesystem) live at the boundaries — keep core logic pure
 - Stop and flag instead of pushing through when a structural smell appears: one concern requires edits in 3+ modules, an import would cross a layer boundary, a module's responsibility no longer fits in one sentence, the same logic appears a third time
 - Structure for current requirements, not hypothetical ones — extensibility needs a named, concrete upcoming use case
+- Changing a decision means changing its consequences. Grep for the old claim, its mechanism and its numbers across all related documents before committing — a document that contradicts itself is worse than a stale one, because both halves read as current.
 
 ## Tests
 - No feature is done without at least one test — in projects without test infrastructure, flag the gap instead of skipping silently
